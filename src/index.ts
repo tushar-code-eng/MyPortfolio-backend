@@ -1,6 +1,7 @@
 import express, { Application } from "express";
 import bodyParser from "body-parser";
 import userRoutes from "./routes/user";
+import testRoute from "./routes/testRoute"
 
 import cors from "cors";
 
@@ -12,6 +13,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Routes
+app.use("/api/test",testRoute);
+
 app.use("/api/users", userRoutes);
 
 // Start Server
